@@ -1,0 +1,66 @@
+design-runbooks
+Copyright 2026 Mohammad Wahbeh
+
+This product includes software developed by third parties. Each upstream
+project is listed below with its licence; the full licence texts are in
+`licenses/`, and the file-by-file provenance is in `MANIFEST.md`.
+
+--------------------------------------------------------------------------
+impeccable — Apache License 2.0
+Copyright 2025 Paul Bakaus
+https://github.com/pbakaus/impeccable
+Pinned commit: cb56ed6c19a07329a9fa0cd4e657bee040156593
+
+This product contains material derived from impeccable v4.1.0 at the commit
+above, licensed under the Apache License, Version 2.0. Files derived from it:
+
+    reference/impeccable-anti-patterns.md
+    reference/impeccable-artifacts.md
+    reference/impeccable-commands.md
+    reference/impeccable-detector-rules.md
+    reference/contract.md              (schemas and field prompts only)
+    reference/runbook-create.md        (the three opening questions only)
+    data/impeccable-detector-rules.csv
+
+Those files have been modified from the originals. Each carries a notice
+stating that it was changed and what was changed; `MANIFEST.md` §§ 13-16
+records the change per file and § 17 records every deviation from upstream.
+
+The following attribution notice is reproduced from impeccable's own NOTICE
+file, as required by Apache License 2.0 § 4(d):
+
+    This project includes content derived from third-party work, used under
+    the terms of its original license.
+
+    ## Platform Design Skills
+
+    The `skill/reference/ios.md` and `skill/reference/android.md` platform
+    reference files are distilled from ehmo's `platform-design-skills`
+    (Apple Human Interface Guidelines and Material Design 3 rules),
+    rewritten in Impeccable's voice.
+
+    Original work:    https://github.com/ehmo/platform-design-skills
+    Original license: MIT
+    Author:           ehmo
+
+    (Neither `ios.md` nor `android.md` was extracted into design-runbooks;
+    this skill is web-only. The notice is reproduced in full regardless.)
+
+--------------------------------------------------------------------------
+ui-ux-pro-max — MIT License
+Copyright (c) 2024 Next Level Builder
+https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+Pinned commit: 15de38fb70bc80ae9276fa7703b48ae861a672e6
+
+--------------------------------------------------------------------------
+hallmark — MIT License
+Copyright (c) 2026 Hallmark contributors
+https://github.com/nutlope/hallmark
+Pinned commit: 13ac0ec7e148655948100b6396439e481361d690
+
+--------------------------------------------------------------------------
+Web Interface Guidelines — MIT License
+Copyright (c) 2025 Vercel Labs
+https://github.com/vercel-labs/web-interface-guidelines
+Pinned commit: e3d624baaf29dc1fc645aff3e38f03e564d2d6b1
+--------------------------------------------------------------------------

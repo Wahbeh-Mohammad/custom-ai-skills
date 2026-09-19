@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Skill runtime state: per-project taste logs are written on every run and
+# belong to whoever ran the skill. Keep the directory, drop the entries.
+skills/*/history/log/*
+!skills/*/history/log/.gitkeep
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
