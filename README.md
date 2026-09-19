@@ -1,13 +1,14 @@
 # custom-ai-skills
 
 Custom skills for AI coding agents (Claude Code and other agents that read `SKILL.md`).
-Each top-level folder is one self-contained skill.
+Each top-level folder is one self-contained skill. Each skill is explained in its own note in
+[`docs/`](docs/).
 
 ## Skills
 
-| Skill | What it does |
-|---|---|
-| [`design-runbooks`](design-runbooks/SKILL.md) | Designs, redesigns, audits and revises web UIs (landing pages, marketing sites, app surfaces, dashboards). Routes to one of four runbooks (revamp, create, audit, revise) and holds every visual decision to a shared `PRODUCT.md` / `DESIGN.md` contract. Ships 21 macrostructures, 192 product-type palettes, 74 type pairings, a merged rule set, an SVG brand kit linter, and a taste history that learns from confirmed revisions. |
+| Skill | Summary | Docs |
+|---|---|---|
+| [`design-runbooks`](design-runbooks/) | Designs, redesigns, audits and revises web UIs against a shared design contract | [docs/design-runbooks.md](docs/design-runbooks.md) |
 
 ## Install
 
@@ -15,61 +16,18 @@ Copy or symlink a skill folder into your agent's skills directory. For Claude Co
 
 ```bash
 # personal, all projects
-cp -r design-runbooks ~/.claude/skills/
+cp -r <skill> ~/.claude/skills/
 
 # or a single project
-cp -r design-runbooks <project>/.claude/skills/
+cp -r <skill> <project>/.claude/skills/
+
+# symlink to pick up `git pull` updates automatically
+ln -s "$PWD/<skill>" ~/.claude/skills/<skill>
 ```
 
-Symlink instead of copying to pick up `git pull` updates automatically:
-
-```bash
-ln -s "$PWD/design-runbooks" ~/.claude/skills/design-runbooks
-```
-
-## design-runbooks
-
-```
-design-runbooks/
-├── SKILL.md                  entry point: routing between the four runbooks
-├── guidelines-and-review.md  web interface guidelines and review checklist
-├── reference/                runbooks, contract, merged rules, upstream extracts
-├── data/                     palettes, type pairings, styles, stack rules (CSV)
-├── scripts/                  search.py, design_system.py, svg_lint.py (Python 3, stdlib only)
-├── history/                  taste history: TASTE.md rules + per-project logs
-├── licenses/                 upstream license texts
-├── MANIFEST.md               extraction provenance, pinned upstream commits
-├── THIRD-PARTY-NOTICES.md
-├── NOTICE
-└── LICENSE
-```
-
-The scripts need Python 3 and nothing else:
-
-```bash
-cd design-runbooks
-python3 scripts/search.py "fintech dashboard" --design-system
-python3 -m unittest scripts/test_svg_lint.py
-```
-
-**Taste history.** The skill keeps a skill-local record of revision requests in
-`history/log/<project>.md` and promotes repeated, user-confirmed preferences into
-`history/TASTE.md`. The log files are personal run data and are git-ignored; `TASTE.md` ships
-empty. See [`history/README.md`](design-runbooks/history/README.md). Benchmark and evaluation
-runs should set `history: off`.
-
-**License.** Apache-2.0 ([`LICENSE`](design-runbooks/LICENSE)). It includes material extracted
-from four upstream projects, credited with pinned commits in
-[`MANIFEST.md`](design-runbooks/MANIFEST.md) and
-[`THIRD-PARTY-NOTICES.md`](design-runbooks/THIRD-PARTY-NOTICES.md):
-
-| Upstream | License |
-|---|---|
-| [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | MIT |
-| [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | MIT |
-| [vercel-labs/web-interface-guidelines](https://github.com/vercel-labs/web-interface-guidelines) | MIT |
-| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Apache-2.0 |
+Setup a skill needs beyond copying it is covered in that skill's docs note.
 
 ## License
 
-Each skill carries its own license in its folder.
+Each skill carries its own license in its folder. See the skill's docs note for provenance and
+third-party notices.
