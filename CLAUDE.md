@@ -1,7 +1,8 @@
 # custom-ai-skills
 
 A collection of agent skills. Each top-level folder (other than `docs/`) is one self-contained
-skill that users install by copying or symlinking it into `~/.claude/skills/`.
+skill that users install by copying or symlinking it into an agent's skills directory
+(`~/.claude/skills/`, `~/.agents/skills/`, ...; full table in the README).
 
 ## Layout
 
@@ -19,8 +20,8 @@ CLAUDE.md           this file
 - **Folder name matches the `name:` in `SKILL.md` frontmatter.** That name is how agents find it.
 - **A skill is self-contained.** Paths it tells the agent to read or run are relative to its own
   folder. No links to other skills, to `docs/`, to the repo root, or to anything on the
-  author's machine. A skill must work after `cp -r <skill> ~/.claude/skills/`. Links inside
-  verbatim upstream text (e.g. `../../../site/css/tokens.css` in
+  author's machine. A skill must work after `cp -r <skill>` into any agent's skills directory.
+  Links inside verbatim upstream text (e.g. `../../../site/css/tokens.css` in
   `design-runbooks/reference/hallmark-custom-theme.md`) are upstream's and stay as they are.
 - **No build step, no runtime dependencies** beyond what the docs note states. Scripts in
   `design-runbooks/scripts/` are Python 3 stdlib only; keep them that way.
